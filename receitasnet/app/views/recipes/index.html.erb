@@ -4,6 +4,7 @@
     <article>
         <header>
             <h2><%= link_to recipe.name , recipe %></h2>
+            <%= imagem(recipe) %>
         </header>
         <p>
             <%= truncate(recipe.stuff, length:15, separator: '') %>
@@ -11,6 +12,11 @@
         <p>
             <%= formata_caloria(recipe) %>
         </p>
+        <p>
+            <%= recipe.duration.to_formatted_s(:time) %> min
+        </p>
+
+
         <table>
             <tr>
                 <th>Modo de Preparo:</th>

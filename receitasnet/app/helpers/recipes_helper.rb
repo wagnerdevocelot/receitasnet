@@ -7,4 +7,12 @@ module RecipesHelper
             recipe.calories
         end
     end
+
+    def imagem(recipe)
+        if recipe.poster.blank?
+            image_tag('sem-imagem.gif')
+        else
+            image_tag(recipe.poster)
+        end
+    end
 end
